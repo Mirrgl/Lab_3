@@ -272,8 +272,8 @@ ostream& operator<<(ostream& os, const vector<int>& data) {
 }
 
 ostream& operator<<(ostream& os, const vector<pair<int, bool>>& data) {
-    os << setw(10) << left << "№" << "\t";
-    for (int i = 1; i < data.size(); i++) {
+    // os << setw(10) << left << "№" << "\t";
+    for (int i = 1; i <= data.size(); i++) {
         os << setw(10) << left << i << "\t";
     }
     os << "\n";

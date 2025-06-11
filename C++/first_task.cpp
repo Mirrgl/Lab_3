@@ -4,7 +4,7 @@
 #include <cmath>
 #include <algorithm>
 
-#define DX 0.1
+#define DX 0.5
 
 using namespace std;
 
@@ -63,25 +63,42 @@ int main() {
 
 	vector<float> out;
 	
-	cout << "y:" << endl;
+	cout << "x | y:" << endl;
 	
 	out = solveCircle(DX , -10, -6);
-	cout << out << endl;
-	
+    float x = -10;
+    for (int i = 0; i < out.size(); i++) {
+        cout << fixed << setprecision(1)<< x << "\t" << out[i] << endl;
+        x+=DX;
+    }
+		
 	cout << endl;
 	
 	out = solveLine(DX, -6,  2);
-	cout << out << endl;
+	 x = -6;
+    for (int i = 0; i < out.size(); i++) {
+        cout << x << "\t" << out[i] << endl;
+        x+=DX;
+    }
 	
 	cout << endl;
 	
 	out = solveFlatLine(DX, 2,  6);
-	cout << out << endl;
+	 x = 2;
+    for (int i = 0; i < out.size(); i++) {
+        cout << x << "\t" << out[i] << endl;
+        x+=DX;
+    }
 	
 	cout << endl;
 	
-	out = solveParabola(DX, 6, 8+DX);
-	cout << out << endl;
+	out = solveParabola(DX, 6, 9);
+	 x = 6;
+    for (int i = 0; i < out.size(); i++) {
+        cout << x << "\t" << out[i] << endl;
+        x+=DX;
+        if (x == 8.5) break;
+    }
 
     return 0;
 }
